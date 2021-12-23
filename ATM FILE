@@ -1,0 +1,46 @@
+#python code for a specific person's atm
+print('Welcome to VITC BANK,please insert your card')
+restart=('Y')
+chances=3
+balance=100
+while chances>=0:
+    pin=int(input("Please enter your pin:"))
+    if pin==(3645):
+        print("The pin is correct\n")
+        while restart not in ('no','NO','N','n'):
+            print("Press 1 to Withdraw\n")
+            print('Press 2 to CHeck your balance\n')
+            print('Press 3 To return the card\n')
+            opt=int(input("Select an option"))
+            if opt==1:
+                withdrawl= float(input("Enter the amount you want to withdraw\n"))
+                if withdrawl in [10,20,50,100,500,2000]:
+                    balance=balance-withdrawl
+                    print("Your Current balance is",balance)
+                    restart=input("Would you like to go back to the original page?")
+                    if restart in ('n','N','NO','no'):#TO STOP THE PROCESS
+                        print("Thank you")
+                        break
+                    elif withdrawl !=[10,20,50,100,500,2000]:
+                        print("Invalid Input,Please retry")
+                        restart=('Y')
+                    elif withdrawl==1:
+                        withdrawl=float(input("Please enter the desired amount"))
+                elif opt==2:
+                    print("Your account balance is",balance)
+                    restart=input("Would you like to go back?")
+                    if restart in('n',"N",'NO','no'):
+                        print('Thank you')
+                        break
+                elif opt==3:
+                    print('Please wait,your card is being returned')
+                    print("Thank you for using our ATM,Have a Great day")
+                else:
+                    print("Please enter a correct number")
+                    restart=('y')
+    elif pin!=('3645'):
+        print('Incorrect pin')
+        chances=chances-1
+        if chances==0:
+            print('Card blocked for entering wrong pin multiple times')
+            break
