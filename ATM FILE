@@ -2,7 +2,7 @@
 print('Welcome to VITC BANK,please insert your card')
 restart=('Y')
 chances=3
-balance=100
+balance=1000
 while chances>=0:
     pin=int(input("Please enter your pin:"))
     if pin==(3645):
@@ -14,19 +14,17 @@ while chances>=0:
             opt=int(input("Select an option"))
             if opt==1:
                 withdrawl= float(input("Enter the amount you want to withdraw\n"))
-                if withdrawl<0:
-                    print("Withdrawl amount can't be negative")
-                if withdrawl in [10,20,50,100,500,2000]:
+                if withdrawl in [10,20,50,100,500,2000,5000,10000]:
                     if balance>withdrawl:
                         balance=balance-withdrawl
                         print("Your Current balance is",balance)
                         restart=input("Would you like to go back to the original page?")
                         if restart in ('n','N','NO','no'):#TO STOP THE PROCESS
-                            print("Thank you")
+                            print("Thank you,your card is being returned")
                             break
                     elif balance<withdrawl:
-                        print("Insufficient Balance")
-                elif withdrawl !=[10,20,50,100,500,2000]:
+                        print("Insufficient balance ")
+                elif withdrawl !=[10,20,50,100,500,2000,5000,10000]:
                     print("Invalid Input,Please retry")
                     restart=('Y')
                 elif withdrawl==1:
@@ -35,7 +33,7 @@ while chances>=0:
                     print("Your account balance is",balance)
                     restart=input("Would you like to go back?")
                     if restart in('n',"N",'NO','no'):
-                        print('Thank you')
+                        print('Thank you,Your Card is being returned')
                         break
             elif opt==3:
                     print('Please wait,your card is being returned')
